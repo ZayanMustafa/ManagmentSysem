@@ -1,0 +1,18 @@
+project/
+├── backend/
+│   ├── models/               # Mongoose models (Teacher, Student, etc.)
+│   ├── routes/               # API routes (teacherRoutes.js, studentRoutes.js, etc.)
+│   ├── controllers/          # Logic for routes
+│   ├── db.js                 # MongoDB connection
+│   ├── server.js             # Express server setup
+│   ├── .env                  # Environment variables (MONGO_URI, JWT_SECRET)
+│   └── package.json
+├── frontend/
+│   ├── src/
+│   │   ├── components/       # Reusable UI components
+│   │   ├── pages/            # Pages for each route
+│   │   ├── App.js            # Main React component
+│   │   ├── index.js          # Entry point for React
+│   │   └── .env              # React environment variables
+│   └── package.json
+└── README.md
