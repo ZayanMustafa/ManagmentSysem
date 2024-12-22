@@ -1,0 +1,104 @@
+### **Project Workflow for Saylani Management System**
+
+#### **Project Overview**
+- **Roles**: Musharib and Zayyan will collaborate equally to develop the Saylani Management System. 
+- **Objective**: To create a management system with three roles (Admin, Teacher, Student), incorporating real-time progress tracking, attendance, and syllabus management.
+
+---
+
+#### **Proposed Timeline and Tasks**
+
+### **Week 1: Planning and Setup**
+- **Goals**:
+  1. Define the full scope of the project.
+  2. Finalize the database schema and architecture.
+  3. Set up the development environment.
+
+- **Tasks**:
+  1. Create a shared repository (GitHub or GitLab).
+  2. Design database schemas for Admin, Teacher, Student, Course, Attendance, and Syllabus.
+  3. Install necessary tools: Node.js, MongoDB, React, and libraries.
+
+---
+
+### **Week 2: Backend Development (Part 1)**
+- **Goals**:
+  1. Implement authentication and role-based access control.
+  2. Develop APIs for core functionalities.
+
+- **Tasks**:
+  1. Create routes for:
+     - Admin management of Teachers, Students, and Courses.
+     - Teacher syllabus updates and attendance marking.
+     - Student registration and attendance.
+  2. Test APIs using Postman or similar tools.
+
+---
+
+### **Week 3: Backend Development (Part 2)**
+- **Goals**:
+  1. Add real-time updates using Socket.io.
+  2. Finalize data validation and error handling.
+
+- **Tasks**:
+  1. Integrate real-time features for progress and attendance tracking.
+  2. Ensure proper input validation for all endpoints.
+  3. Optimize API performance and security.
+
+---
+
+### **Week 4: Frontend Development (Part 1)**
+- **Goals**:
+  1. Design role-specific dashboards.
+  2. Create reusable components for forms, tables, and charts.
+
+- **Tasks**:
+  1. Develop Admin dashboard with:
+     - Teacher and student progress overview.
+     - Course and batch management.
+  2. Develop Teacher dashboard with:
+     - Syllabus tracking.
+     - Attendance marking.
+  3. Develop Student dashboard with:
+     - Attendance and course progress viewing.
+
+---
+
+### **Week 5: Frontend Development (Part 2)**
+- **Goals**:
+  1. Connect frontend with backend APIs.
+  2. Add real-time updates to dashboards.
+
+- **Tasks**:
+  1. Fetch and display data using Axios or Fetch API.
+  2. Implement Socket.io for real-time data updates.
+  3. Conduct initial end-to-end testing of dashboards.
+
+---
+
+### **Week 6: Testing and Deployment**
+- **Goals**:
+  1. Test all features and fix bugs.
+  2. Deploy the application.
+
+- **Tasks**:
+  1. Conduct thorough testing (unit, integration, and end-to-end).
+  2. Deploy backend on Heroku/AWS and frontend on Vercel/Netlify.
+  3. Use MongoDB Atlas for a cloud database solution.
+
+---
+
+#### **Key Milestones**
+1. **Week 1**: Database and setup completed.
+2. **Week 3**: Backend functionality ready.
+3. **Week 5**: Frontend integrated and functional.
+4. **Week 6**: Fully tested and deployed system.
+
+#### **Team Collaboration Plan**
+- Assign equal tasks to Musharib and Zayyan.
+- Use task management tools like Trello or Asana.
+- Conduct daily check-ins to ensure progress.
+
+#### **Estimated Completion Time**
+**6 Weeks** (Including testing and deployment).
+
