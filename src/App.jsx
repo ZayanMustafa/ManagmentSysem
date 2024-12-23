@@ -1,16 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import SignIn from './signin'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import {NextUIProvider} from '@nextui-org/react'
+import NotFound from "./error/pagenotfound";
+import SignIn from "./auth/signin";
+import ErrorPage from "./error/error";
+import LowInternet from "./error/lowinternet";
+import AdminPage from "./pages/adminpage/adminmain";
 
-function App() {
-
+export default function App() {
   return (
     <>
-      <SignIn/>   
+    {/* <NextUIProvider>  */}
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={< SignIn />}></Route>
+          <Route path="/*" element={< NotFound/>}></Route>
+          <Route path="/error" element={< ErrorPage />}></Route>
+          <Route path="/srudent" element={< SignIn />}></Route>
+          <Route path="/admin" element={< AdminPage />}></Route>
+          <Route path="/loading" element={< LowInternet />}></Route>
+
+          
+        </Routes>
+      </BrowserRouter>
+    {/* </NextUIProvider> */}
     </>
+
   )
 }
-
-export default App
