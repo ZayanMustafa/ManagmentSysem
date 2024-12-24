@@ -59,8 +59,8 @@ export default function SignIn() {
              name = "id"            
              id = "userId"   
              required 
-             onChange={(e) => setPassword(e.target.value)}          
-             value={password}
+             onChange={(e) => setId(e.target.value)}          
+             value={id}
              />
 
              <InputField

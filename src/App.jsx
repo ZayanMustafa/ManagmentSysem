@@ -5,6 +5,8 @@ import SignIn from "./auth/signin";
 import ErrorPage from "./error/error";
 import LowInternet from "./error/lowinternet";
 import AdminPage from "./pages/adminpage/adminmain";
+import TeacherPage from "./pages/teacherpage/teachermain";
+import StudentPage from "./pages/studentpage/studentmain";
 
 export default function App() {
   return (
@@ -15,8 +17,10 @@ export default function App() {
           <Route path="/" element={< SignIn />}></Route>
           <Route path="/*" element={< NotFound/>}></Route>
           <Route path="/error" element={< ErrorPage />}></Route>
-          <Route path="/srudent" element={< SignIn />}></Route>
+          <Route path="/signin" element={< SignIn />}></Route>
           <Route path="/admin" element={< AdminPage />}></Route>
+          <Route path="/teacher" element={< TeacherPage />}></Route>
+          <Route path="/student" element={< StudentPage />}></Route>
           <Route path="/loading" element={< LowInternet />}></Route>
 
           

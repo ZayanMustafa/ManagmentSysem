@@ -21,23 +21,19 @@ import {
 } from '@mui/icons-material';
 import { SideDraw } from '../../components/Admin/draw';
 
-export default function AdminSlidebar() {
+export default function TeacherSlidebar() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const [drawerOpen, setDrawerOpen] = React.useState(!isMobile);
-  const drawerWidth = 200;
+  const drawerWidth = 240;
 
   const handleDrawerToggle = () => {
     setDrawerOpen(!drawerOpen);
   };
 
   const listItems = [
-    { icon: <PeopleIcon />, text: 'Teachers', subOptions: ['All Teachers', 'Add Teacher'] },
-    { icon: <PeopleIcon />, text: 'Students', subOptions: ['View Students', 'Add Student'] },
-    { icon: <PeopleIcon />, text: 'Classes', subOptions: ['View Classes', 'Add Classes'] },
-    { icon: <BookIcon />, text: 'Courses', subOptions: ['View Courses', 'Add Course'] },
-    { icon: <PeopleIcon />, text: 'Attendance', subOptions: ['View Attendance', 'Add Attendance Record'] },
-    { icon: <AccountBalanceIcon />, text: 'Finance', subOptions: ['View Finance', 'Add Finance Record'] },
+    { icon: <PeopleIcon />, text: 'Course Outline', subOptions: ['Complete Outline', 'Daily Assigment'] },
+    { icon: <PeopleIcon />, text: 'Student Assignments', subOptions: ['Assignments Students', 'Add Student'] },
     { icon: <LogoutIcon />, text: 'Log out', subOptions: [] },
   ];
 
@@ -51,12 +47,8 @@ export default function AdminSlidebar() {
   ];
 
   const subOptionLinks = [
-    ['/teachers/all', '/teachers/add'],
-    ['/students/view', '/students/add'],
-    ['/classes/view', '/classes/add'],
-    ['/courses/view', '/courses/add'],
-    ['/finance/view', '/finance/add'],
-    ['/attendance/view', '/attendance/add'],
+    ['/courseoutline/complete', '/Course Outline/assigment'],
+    ['/assigment/sumbited', '/students/add'],
   ];
 
   return (
@@ -73,8 +65,8 @@ export default function AdminSlidebar() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap sx={{ flexGrow: 1, color: 'white' }}>
-            Admin Pannel 
+          <Typography variant="h5" noWrap sx={{ flexGrow: 1, color: 'white' }}>
+            Teacher
           </Typography>
           <IconButton color="inherit">
             <Badge
@@ -84,7 +76,7 @@ export default function AdminSlidebar() {
             </Badge>
           </IconButton>
           <IconButton  color="inherit">
-            <Avatar alt="User Avatar" src="/static/images/avatar/1.jpg" />
+            <Avatar alt="Teacher" src="/static/images/avatar/1.jpg" />
           </IconButton>
         </Toolbar>
       </AppBar>
