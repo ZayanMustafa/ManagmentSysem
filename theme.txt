@@ -1,0 +1,4 @@
+Role	Primary Color	Accent Color	Background
+Admin	Dark Blue (#1A73E8)	Silver (#C0C0C0)	Light Gray (#F5F5F5)
+Teacher	Green (#34A853)	Amber (#FFC107)	Off-White (#FAFAFA)
+Student	Teal (#00897B)	Orange (#FF5722)	White (#FFFFFF)
