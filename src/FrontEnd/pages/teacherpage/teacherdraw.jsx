@@ -19,7 +19,7 @@ import {
   AccountBalance as AccountBalanceIcon,
   Logout as LogoutIcon,
 } from '@mui/icons-material';
-import { SideDraw } from '../../components/Admin/draw';
+import { SideDraw } from '../../components/draw';
 
 export default function TeacherSlidebar() {
   const theme = useTheme();

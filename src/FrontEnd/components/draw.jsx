@@ -15,7 +15,7 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 
-export const SideDraw = ({ isMobile, drawerOpen, handleDrawerToggle, drawerWidth, listItems, itemColors , subOptionLinks }) => {
+ const SideDraw = ({ isMobile, drawerOpen, handleDrawerToggle, drawerWidth, listItems, itemColors , subOptionLinks }) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(drawerOpen);
   const [openSubMenu, setOpenSubMenu] = useState(null);
 
@@ -98,3 +98,5 @@ export const SideDraw = ({ isMobile, drawerOpen, handleDrawerToggle, drawerWidth
     </Drawer>
   );
 };
+
+export default SideDraw;

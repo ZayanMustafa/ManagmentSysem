@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container, TextField, Button, Typography, Box, Paper } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import InputField from '../components/Admin/inputfeild';
+import InputField from '../components/inputfeild';
 
 export default function SignIn() {
   const [id, setId] = useState('');

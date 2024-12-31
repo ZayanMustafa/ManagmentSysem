@@ -19,7 +19,8 @@ import {
   AccountBalance as AccountBalanceIcon,
   Logout as LogoutIcon,
 } from '@mui/icons-material';
-import { SideDraw } from '../../components/Admin/draw';
+import SideDraw from '../../components/draw';
+import SearchBar from '../../components/searchbar';
 
 export default function AdminSlidebar() {
   const theme = useTheme();
@@ -74,8 +75,9 @@ export default function AdminSlidebar() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap sx={{ flexGrow: 1, color: 'white' }}>
-            Admin Pannel 
+            Admin Panel
           </Typography>
+          <SearchBar />
           <IconButton color="inherit">
             <Badge
             sx={{ mr: 1}}
@@ -84,7 +86,7 @@ export default function AdminSlidebar() {
             </Badge>
           </IconButton>
           <IconButton  color="inherit">
-            <Avatar alt="User Avatar" src="/static/images/avatar/1.jpg" />
+            <Avatar alt="Admin Avatar" src="/static/images/avatar/1.jpg" />
           </IconButton>
         </Toolbar>
       </AppBar>
