@@ -19,21 +19,26 @@ import {
   AccountBalance as AccountBalanceIcon,
   Logout as LogoutIcon,
 } from '@mui/icons-material';
-import { SideDraw } from '../../components/draw';
+import SideDraw from '../../components/draw';
+import SearchBar from '../../components/searchbar';
 
 export default function TeacherSlidebar() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const [drawerOpen, setDrawerOpen] = React.useState(!isMobile);
-  const drawerWidth = 240;
+  const drawerWidth = 200;
 
   const handleDrawerToggle = () => {
     setDrawerOpen(!drawerOpen);
   };
 
   const listItems = [
-    { icon: <PeopleIcon />, text: 'Course Outline', subOptions: ['Complete Outline', 'Daily Assigment'] },
-    { icon: <PeopleIcon />, text: 'Student Assignments', subOptions: ['Assignments Students', 'Add Student'] },
+    { icon: <PeopleIcon />, text: 'Teachers', subOptions: ['All Teachers', 'Add Teacher'] },
+    { icon: <PeopleIcon />, text: 'Students', subOptions: ['View Students', 'Add Student'] },
+    { icon: <PeopleIcon />, text: 'Classes', subOptions: ['View Classes', 'Add Classes'] },
+    { icon: <BookIcon />, text: 'Courses', subOptions: ['View Courses', 'Add Course'] },
+    { icon: <PeopleIcon />, text: 'Attendance', subOptions: ['View Attendance', 'Add Attendance Record'] },
+    { icon: <AccountBalanceIcon />, text: 'Finance', subOptions: ['View Finance', 'Add Finance Record'] },
     { icon: <LogoutIcon />, text: 'Log out', subOptions: [] },
   ];
 
@@ -47,8 +52,12 @@ export default function TeacherSlidebar() {
   ];
 
   const subOptionLinks = [
-    ['/courseoutline/complete', '/Course Outline/assigment'],
-    ['/assigment/sumbited', '/students/add'],
+    ['/teachers/all', '/teachers/add'],
+    ['/students/view', '/students/add'],
+    ['/classes/view', '/classes/add'],
+    ['/courses/view', '/courses/add'],
+    ['/finance/view', '/finance/add'],
+    ['/attendance/view', '/attendance/add'],
   ];
 
   return (
@@ -65,22 +74,21 @@ export default function TeacherSlidebar() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h5" noWrap sx={{ flexGrow: 1, color: 'white' }}>
-            Teacher
+          <Typography variant="h6" noWrap sx={{ flexGrow: 1, color: 'white' }}>
+            Teacher Panel
           </Typography>
+          <SearchBar />
           <IconButton color="inherit">
-            <Badge
-            sx={{ mr: 1}}
-            badgeContent={12} color="secondary">
+            <Badge sx={{ mr: 1 }} badgeContent={12} color="secondary">
               <NotificationsIcon />
             </Badge>
           </IconButton>
-          <IconButton  color="inherit">
-            <Avatar alt="Teacher" src="/static/images/avatar/1.jpg" />
+          <IconButton color="inherit">
+            <Avatar alt="Teacher Avatar" src="/static/images/avatar/1.jpg" />
           </IconButton>
         </Toolbar>
       </AppBar>
-     
+
       <SideDraw
         isMobile={isMobile}
         drawerOpen={drawerOpen}
@@ -95,7 +103,7 @@ export default function TeacherSlidebar() {
         sx={{ flexGrow: 1, p: 3, ml: { sm: `${drawerWidth}px` } }}
       >
         <Toolbar />
-        
+        {/* Add your main content here */}
       </Box>
     </Box>
   );

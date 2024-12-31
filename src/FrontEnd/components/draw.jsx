@@ -15,7 +15,7 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 
- const SideDraw = ({ isMobile, drawerOpen, handleDrawerToggle, drawerWidth, listItems, itemColors , subOptionLinks }) => {
+const SideDraw = ({ isMobile, drawerOpen, handleDrawerToggle, drawerWidth, listItems, itemColors, subOptionLinks }) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(drawerOpen);
   const [openSubMenu, setOpenSubMenu] = useState(null);
 
@@ -40,7 +40,7 @@ import { Link } from 'react-router-dom';
       open={isDrawerOpen}
       onClose={handleToggle}
       ModalProps={{
-        keepMounted: true, 
+        keepMounted: true,
       }}
       sx={{
         display: { xs: 'block', sm: 'block' },
@@ -56,8 +56,8 @@ import { Link } from 'react-router-dom';
       <List>
         {listItems.slice(0, -1).map((item, index) => (
           <Box key={index} sx={{ mb: 1 }}>
-            <ListItem 
-              button 
+            <ListItem
+              button
               sx={{ color: "rgba(14, 13, 13, 0.94)" }}
               onClick={() => handleSubMenuToggle(index)}
             >
@@ -68,12 +68,12 @@ import { Link } from 'react-router-dom';
             <Collapse in={openSubMenu === index} timeout="auto" unmountOnExit>
               <List component="div" disablePadding>
                 {item.subOptions.map((subOption, subIndex) => (
-                  <ListItem 
-                    button 
-                    key={subIndex} 
-                    component={Link} 
+                  <ListItem
+                    button
+                    key={subIndex}
+                    component={Link}
                     to={subOptionLinks[index][subIndex]}
-                    sx={{ pl: 4, marginLeft: 2 ,color: 'rgba(27, 25, 25, 0.7)', mb: 1 }}
+                    sx={{ pl: 4, marginLeft: 2, color: 'rgba(27, 25, 25, 0.7)', mb: 1 }}
                   >
                     <ListItemText primary={subOption} />
                   </ListItem>
@@ -86,9 +86,9 @@ import { Link } from 'react-router-dom';
       <Box sx={{ flexGrow: 1 }} />
       <Divider />
       <List>
-        <ListItem 
+        <ListItem
           button sx={{ color: 'black', mt: 1 }}
-          component={Link} 
+          component={Link}
           to="/error"
         >
           {listItems[listItems.length - 1].icon}
