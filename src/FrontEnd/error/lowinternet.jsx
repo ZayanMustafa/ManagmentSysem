@@ -9,9 +9,9 @@ export default function LowInternet() {
         sx={{
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center', // Center content vertically
-          height: '100vh', // Make the Box take full viewport height
+          alignItems: 'center', 
+          justifyContent: 'center', 
+          height: '100vh',
           textAlign: 'center',
         }}
       >
