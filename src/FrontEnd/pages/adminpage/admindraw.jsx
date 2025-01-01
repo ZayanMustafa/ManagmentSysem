@@ -106,6 +106,7 @@ export default function AdminSlidebar() {
       >
         <Toolbar />
         
+        {/* Add your main content here */}
       </Box>
     </Box>
   );

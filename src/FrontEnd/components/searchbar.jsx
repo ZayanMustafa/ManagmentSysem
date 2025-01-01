@@ -17,8 +17,8 @@ const Search = styled('div')(({ theme }) => ({
     marginLeft: theme.spacing(3),
     width: 'auto',
   },
-  display: 'flex', // Ensure the search bar is displayed as a flex container
-  alignItems: 'center', // Center items vertically
+  display: 'flex', 
+  alignItems: 'center', 
 }));
 
 const SearchIconWrapper = styled('div')(({ theme }) => ({
