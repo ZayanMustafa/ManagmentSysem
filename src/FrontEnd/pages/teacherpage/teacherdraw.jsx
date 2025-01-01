@@ -42,14 +42,6 @@ export default function TeacherSlidebar() {
     { icon: <LogoutIcon />, text: 'Log out', subOptions: [] },
   ];
 
-  const itemColors = [
-    'red',
-    'blue',
-    'green',
-    'purple',
-    'orange',
-    'black',
-  ];
 
   const subOptionLinks = [
     ['/students/view'],
@@ -93,7 +85,6 @@ export default function TeacherSlidebar() {
         handleDrawerToggle={handleDrawerToggle}
         drawerWidth={drawerWidth}
         listItems={listItems}
-        itemColors={itemColors}
         subOptionLinks={subOptionLinks}
       />
       <Box

@@ -43,15 +43,6 @@ export default function AdminSlidebar() {
     { icon: <LogoutIcon />, text: 'Log out', subOptions: [] },
   ];
 
-  const itemColors = [
-    'red',
-    'blue',
-    'green',
-    'purple',
-    'orange',
-    'black',
-  ];
-
   const subOptionLinks = [
     ['/teachers/all', '/teachers/add'],
     ['/students/view', '/students/add'],
@@ -98,7 +89,6 @@ export default function AdminSlidebar() {
         handleDrawerToggle={handleDrawerToggle}
         drawerWidth={drawerWidth}
         listItems={listItems}
-        itemColors={itemColors}
         subOptionLinks={subOptionLinks}
       />
      <Box

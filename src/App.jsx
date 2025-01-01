@@ -5,6 +5,7 @@ import NotFound from "./FrontEnd/error/pagenotfound";
 import ErrorPage from "./FrontEnd/error/error";
 import StudentPage from "./FrontEnd/pages/studentpage/studentmain";
 import TeacherPage from "./FrontEnd/pages/teacherpage/teachermain";
+import AddTeacher from "./FrontEnd/pages/addform/addteacher";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="/error" element={ <ErrorPage/> }></Route>
           <Route path="/student" element={ <StudentPage/> }></Route>
           <Route path="/teacher" element={ <TeacherPage/> }></Route>
+          <Route path="/addteacher" element={ < AddTeacher /> }></Route>
         </Routes>
       </BrowserRouter>
     {/* </NextUIProvider> */}
