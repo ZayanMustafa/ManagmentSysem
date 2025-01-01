@@ -1,9 +1,9 @@
-import TeacherSlidebar from "./teacherdraw"
+import TeacherSlidebar from "./teacherdraw";
 
-export default function TeacherPage (){
+export default function TeacherPage() {
     return (
-            <>
-            <TeacherSlidebar/>
-            </>
-    )
+        <>
+            <TeacherSlidebar />
+        </>
+    );
 }

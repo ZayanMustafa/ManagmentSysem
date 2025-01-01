@@ -1,0 +1,39 @@
+
+[
+    {
+      "name": "Ahmed Ali",
+      "age": 25,
+      "course": "Web Development",
+      "batch": "Batch A",
+      "id": 1
+    },
+    {
+      "name": "Fatima Zahra",
+      "age": 22,
+      "course": "Data Science",
+      "batch": "Batch B",
+      "id": 2
+    },
+    {
+      "name": "Omar Farooq",
+      "age": 28,
+      "course": "Mobile App Development",
+      "batch": "Batch C",
+      "id": 3
+    },
+    {
+      "name": "Aisha Noor",
+      "age": 23,
+      "course": "Digital Marketing",
+      "batch": "Batch A",
+      "id": 4
+    },
+    {
+      "name": "Bilal Ahmad",
+      "age": 27,
+      "course": "Machine Learning",
+      "batch": "Batch B",
+      "id": 5
+    }
+  ]
+  

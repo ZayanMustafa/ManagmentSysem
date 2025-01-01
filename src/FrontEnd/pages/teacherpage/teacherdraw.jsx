@@ -16,7 +16,6 @@ import {
   Notifications as NotificationsIcon,
   People as PeopleIcon,
   Book as BookIcon,
-  AccountBalance as AccountBalanceIcon,
   Logout as LogoutIcon,
 } from '@mui/icons-material';
 import SideDraw from '../../components/draw';
@@ -37,17 +36,16 @@ export default function TeacherSlidebar() {
     { icon: <PeopleIcon />, text: 'Students', subOptions: ['All Students'] },
     { icon: <PeopleIcon />, text: 'Batches', subOptions: ['All Batches '] },
     { icon: <BookIcon />, text: 'Courses Outline', subOptions: ['View Courses', 'Add Course'] },
-    { icon: <PeopleIcon />, text: 'Assigments', subOptions: ['Add Assigments' , 'View Assigments' ] },
-    { icon: <PeopleIcon />, text: 'Requst', subOptions: [] },
+    { icon: <PeopleIcon />, text: 'Assignments', subOptions: ['Add Assignments', 'View Assignments'] },
+    { icon: <PeopleIcon />, text: 'Request', subOptions: [] },
     { icon: <LogoutIcon />, text: 'Log out', subOptions: [] },
   ];
 
-
   const subOptionLinks = [
     ['/students/view'],
-    ['/assigments/view'],
+    ['/batches/view'],
     ['/courses/view', '/courses/add'],
-    ['/assigments/view', '/assigments/add'],
+    ['/assignments/view', '/assignments/add'],
   ];
 
   return (
@@ -92,20 +90,18 @@ export default function TeacherSlidebar() {
         sx={{ flexGrow: 1, p: 3, ml: { sm: `${drawerWidth}px` } }}
       >
         <Toolbar />
-        
         <Box
-    sx={{
-      display: 'grid',
-      gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr' }, 
-      gap: 4,
-      p: 5,
-    }}
-  >
-
-    <OverviewCard title="Total Students" count="1,205" />
-    <OverviewCard title="Total Batches" count="125" />
-    <OverviewCard title="Total Courses" count="350" />
-    </Box>
+          sx={{
+            display: 'grid',
+            gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr' },
+            gap: 4,
+            p: 5,
+          }}
+        >
+          <OverviewCard title="Total Students" count="1,205" />
+          <OverviewCard title="Total Batches" count="125" />
+          <OverviewCard title="Total Courses" count="350" />
+        </Box>
       </Box>
     </Box>
   );

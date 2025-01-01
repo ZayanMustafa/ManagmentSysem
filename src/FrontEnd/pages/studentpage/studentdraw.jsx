@@ -16,7 +16,6 @@ import {
   Notifications as NotificationsIcon,
   People as PeopleIcon,
   Book as BookIcon,
-  AccountBalance as AccountBalanceIcon,
   Logout as LogoutIcon,
 } from '@mui/icons-material';
 import SideDraw from '../../components/draw';
@@ -34,21 +33,17 @@ export default function StudentSlidebar() {
 
   const listItems = [
     { icon: <PeopleIcon />, text: 'Teachers', subOptions: ['My Teachers'] },
-    { icon: <PeopleIcon />, text: 'Events', subOptions: ['View Students', 'Add Student'] },
+    { icon: <PeopleIcon />, text: 'Events', subOptions: ['View Events', 'Add Event'] },
     { icon: <BookIcon />, text: 'Courses', subOptions: ['View Courses', 'Add Course'] },
-    { icon: <PeopleIcon />, text: 'Performance', subOptions: ['View Classes', 'Add Classes'] },
-    { icon: <AccountBalanceIcon />, text: 'Quiz', subOptions: ['View Attendance', 'Add Attendance Record'] },
+    { icon: <PeopleIcon />, text: 'Performance', subOptions: ['View Performance'] },
     { icon: <LogoutIcon />, text: 'Log out', subOptions: [] },
   ];
 
-
-
   const subOptionLinks = [
-    ['/teachers/all', '/teachers/add'],
-    ['/students/view', '/students/add'],
-    ['/classes/view', '/classes/add'],
+    ['/teachers/view'],
+    ['/events/view', '/events/add'],
     ['/courses/view', '/courses/add'],
-    ['/attendance/view', '/attendance/add'],
+    ['/performance/view'],
   ];
 
   return (
@@ -91,7 +86,7 @@ export default function StudentSlidebar() {
       />
      <Box
   component="main"
-  sx={{ flexGrow: 2, p: 3, ml: { sm: `${drawerWidth}px` } }}
+  sx={{ flexGrow: 1, p: 3, ml: { sm: `${drawerWidth}px` } }}
 >
   <Toolbar />
   <Box

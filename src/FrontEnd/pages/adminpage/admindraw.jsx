@@ -71,18 +71,16 @@ export default function AdminSlidebar() {
           </Typography>
           <SearchBar />
           <IconButton color="inherit">
-            <Badge
-            sx={{ mr: 1}}
-            badgeContent={12} color="secondary">
+            <Badge sx={{ mr: 1 }} badgeContent={12} color="secondary">
               <NotificationsIcon />
             </Badge>
           </IconButton>
-          <IconButton  color="inherit">
+          <IconButton color="inherit">
             <Avatar alt="Admin Avatar" src="/static/images/avatar/1.jpg" />
           </IconButton>
         </Toolbar>
       </AppBar>
-     
+
       <SideDraw
         isMobile={isMobile}
         drawerOpen={drawerOpen}
@@ -91,30 +89,25 @@ export default function AdminSlidebar() {
         listItems={listItems}
         subOptionLinks={subOptionLinks}
       />
-     <Box
-  component="main"
-  sx={{ flexGrow: 2, p: 3, ml: { sm: `${drawerWidth}px` } }}
->
-  <Toolbar />
-  <Box
-    sx={{
-      display: 'grid',
-      gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr' }, 
-      gap: 4,
-      p: 5,
-    }}
-  >
-    {/* Total Students */}
-    <OverviewCard title="Total Students" count="120,548" />
-    {/* Total Teachers */}
-    <OverviewCard title="Total Teachers" count="8,450" />
-    {/* Total Courses */}
-    <OverviewCard title="Total Courses" count="350" />
-    {/* Total Batches */}
-    <OverviewCard title="Total Batches" count="125" />
-  </Box>
-</Box>
-
+      <Box
+        component="main"
+        sx={{ flexGrow: 2, p: 3, ml: { sm: `${drawerWidth}px` } }}
+      >
+        <Toolbar />
+        <Box
+          sx={{
+            display: 'grid',
+            gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr' },
+            gap: 4,
+            p: 5,
+          }}
+        >
+          <OverviewCard title="Total Students" count="120,548" />
+          <OverviewCard title="Total Teachers" count="8,450" />
+          <OverviewCard title="Total Courses" count="350" />
+          <OverviewCard title="Total Batches" count="125" />
+        </Box>
+      </Box>
     </Box>
   );
 }

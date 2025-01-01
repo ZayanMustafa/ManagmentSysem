@@ -9,18 +9,16 @@ import TeacherPage from "./FrontEnd/pages/teacherpage/teachermain";
 export default function App() {
   return (
     <>
-    {/* <NextUIProvider>  */}
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={< SignIn />}></Route> 
-          <Route path="/admin" element={< AdminPage />}></Route> 
-          <Route path="*" element={ <NotFound/> }></Route>
-          <Route path="/error" element={ <ErrorPage/> }></Route>
-          <Route path="/student" element={ <StudentPage/> }></Route>
-          <Route path="/teacher" element={ <TeacherPage/> }></Route>
-        </Routes>
+          <Routes>
+            <Route path="/" element={< SignIn />}></Route> 
+            <Route path="/admin" element={< AdminPage />}></Route> 
+            <Route path="*" element={< NotFound />}></Route>
+            <Route path="/error" element={< ErrorPage />}></Route>
+            <Route path="/student" element={< StudentPage />}></Route>
+            <Route path="/teacher" element={< TeacherPage />}></Route>
+          </Routes>
       </BrowserRouter>
-    {/* </NextUIProvider> */}
     </>
-  )
-} 
+  );
+}
