@@ -21,6 +21,7 @@ import {
 } from '@mui/icons-material';
 import SideDraw from '../../components/draw';
 import SearchBar from '../../components/searchbar';
+import OverviewCard from '../../components/card';
 
 export default function AdminSlidebar() {
   const theme = useTheme();
@@ -100,14 +101,30 @@ export default function AdminSlidebar() {
         itemColors={itemColors}
         subOptionLinks={subOptionLinks}
       />
-      <Box
-        component="main"
-        sx={{ flexGrow: 1, p: 3, ml: { sm: `${drawerWidth}px` } }}
-      >
-        <Toolbar />
-        
-        {/* Add your main content here */}
-      </Box>
+     <Box
+  component="main"
+  sx={{ flexGrow: 2, p: 3, ml: { sm: `${drawerWidth}px` } }}
+>
+  <Toolbar />
+  <Box
+    sx={{
+      display: 'grid',
+      gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr' }, 
+      gap: 4,
+      p: 5,
+    }}
+  >
+    {/* Total Students */}
+    <OverviewCard title="Total Students" count="120,548" />
+    {/* Total Teachers */}
+    <OverviewCard title="Total Teachers" count="8,450" />
+    {/* Total Courses */}
+    <OverviewCard title="Total Courses" count="350" />
+    {/* Total Batches */}
+    <OverviewCard title="Total Batches" count="125" />
+  </Box>
+</Box>
+
     </Box>
   );
 }

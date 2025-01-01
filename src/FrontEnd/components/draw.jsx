@@ -73,7 +73,7 @@ const SideDraw = ({ isMobile, drawerOpen, handleDrawerToggle, drawerWidth, listI
                     key={subIndex}
                     component={Link}
                     to={subOptionLinks[index][subIndex]}
-                    sx={{ pl: 4, marginLeft: 2, color: 'rgba(27, 25, 25, 0.7)', mb: 1 }}
+                    sx={{ pl: 4, marginLeft: 2, color: 'rgba(29, 28, 28, 0.7)', mb: 1 }}
                   >
                     <ListItemText primary={subOption} />
                   </ListItem>
@@ -89,7 +89,7 @@ const SideDraw = ({ isMobile, drawerOpen, handleDrawerToggle, drawerWidth, listI
         <ListItem
           button sx={{ color: 'black', mt: 1 }}
           component={Link}
-          to="/error"
+          to="/logout"
         >
           {listItems[listItems.length - 1].icon}
           <ListItemText primary={listItems[listItems.length - 1].text} />

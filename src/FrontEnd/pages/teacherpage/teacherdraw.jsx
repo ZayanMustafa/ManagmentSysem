@@ -21,6 +21,7 @@ import {
 } from '@mui/icons-material';
 import SideDraw from '../../components/draw';
 import SearchBar from '../../components/searchbar';
+import OverviewCard from '../../components/card';
 
 export default function TeacherSlidebar() {
   const theme = useTheme();
@@ -33,12 +34,11 @@ export default function TeacherSlidebar() {
   };
 
   const listItems = [
-    { icon: <PeopleIcon />, text: 'Teachers', subOptions: ['All Teachers', 'Add Teacher'] },
-    { icon: <PeopleIcon />, text: 'Students', subOptions: ['View Students', 'Add Student'] },
-    { icon: <PeopleIcon />, text: 'Classes', subOptions: ['View Classes', 'Add Classes'] },
-    { icon: <BookIcon />, text: 'Courses', subOptions: ['View Courses', 'Add Course'] },
-    { icon: <PeopleIcon />, text: 'Attendance', subOptions: ['View Attendance', 'Add Attendance Record'] },
-    { icon: <AccountBalanceIcon />, text: 'Finance', subOptions: ['View Finance', 'Add Finance Record'] },
+    { icon: <PeopleIcon />, text: 'Students', subOptions: ['All Students'] },
+    { icon: <PeopleIcon />, text: 'Batches', subOptions: ['All Batches '] },
+    { icon: <BookIcon />, text: 'Courses Outline', subOptions: ['View Courses', 'Add Course'] },
+    { icon: <PeopleIcon />, text: 'Assigments', subOptions: ['Add Assigments' , 'View Assigments' ] },
+    { icon: <PeopleIcon />, text: 'Requst', subOptions: [] },
     { icon: <LogoutIcon />, text: 'Log out', subOptions: [] },
   ];
 
@@ -52,12 +52,10 @@ export default function TeacherSlidebar() {
   ];
 
   const subOptionLinks = [
-    ['/teachers/all', '/teachers/add'],
-    ['/students/view', '/students/add'],
-    ['/classes/view', '/classes/add'],
+    ['/students/view'],
+    ['/assigments/view'],
     ['/courses/view', '/courses/add'],
-    ['/finance/view', '/finance/add'],
-    ['/attendance/view', '/attendance/add'],
+    ['/assigments/view', '/assigments/add'],
   ];
 
   return (
@@ -79,7 +77,7 @@ export default function TeacherSlidebar() {
           </Typography>
           <SearchBar />
           <IconButton color="inherit">
-            <Badge sx={{ mr: 1 }} badgeContent={12} color="secondary">
+            <Badge sx={{ mr: 1 }} badgeContent={10} color="secondary">
               <NotificationsIcon />
             </Badge>
           </IconButton>
@@ -103,7 +101,20 @@ export default function TeacherSlidebar() {
         sx={{ flexGrow: 1, p: 3, ml: { sm: `${drawerWidth}px` } }}
       >
         <Toolbar />
-        {/* Add your main content here */}
+        
+        <Box
+    sx={{
+      display: 'grid',
+      gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr' }, 
+      gap: 4,
+      p: 5,
+    }}
+  >
+
+    <OverviewCard title="Total Students" count="1,205" />
+    <OverviewCard title="Total Batches" count="125" />
+    <OverviewCard title="Total Courses" count="350" />
+    </Box>
       </Box>
     </Box>
   );
