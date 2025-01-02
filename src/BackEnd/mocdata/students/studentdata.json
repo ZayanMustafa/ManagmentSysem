@@ -1,0 +1,19 @@
+[
+    {
+      "name": "Ahmed Ali",
+      "age": 25,
+      "course": "Web Development",
+      "batch": "Batch A",
+      "id": 1,
+      "timings": "9:00 AM - 12:00 PM"
+    },
+    {
+      "name": "Fatima Zahra",
+      "age": 22,
+      "course": "Data Science",
+      "batch": "Batch B",
+      "id": 2 ,
+      "timings": "1:00 PM - 4:00 PM"
+    }
+  ]
+  

@@ -19,7 +19,7 @@ import {
   Logout as LogoutIcon,
 } from '@mui/icons-material';
 import SideDraw from '../../components/draw';
-import OverviewCard from '../../components/card';
+import OverviewCard from '../../components/overviewcard';
 
 export default function StudentSlidebar() {
   const theme = useTheme();
@@ -46,10 +46,16 @@ export default function StudentSlidebar() {
     ['/performance/view'],
   ];
 
+  const color = {
+    primary: '#00897B',
+    accent: '#FF5722',
+    background: '#FFFFFF',
+  };
+
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar position="fixed" sx={{ zIndex: theme.zIndex.drawer + 1 }}>
+      <AppBar position="fixed" sx={{ zIndex: theme.zIndex.drawer + 1, backgroundColor: color.primary }}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -83,10 +89,11 @@ export default function StudentSlidebar() {
         drawerWidth={drawerWidth}
         listItems={listItems}
         subOptionLinks={subOptionLinks}
+        color={color}
       />
      <Box
   component="main"
-  sx={{ flexGrow: 1, p: 3, ml: { sm: `${drawerWidth}px` } }}
+  sx={{ flexGrow: 1, p: 3, ml: { sm: `${drawerWidth}px` }, backgroundColor: color.background }}
 >
   <Toolbar />
   <Box
@@ -97,17 +104,16 @@ export default function StudentSlidebar() {
       p: 5,
     }}
   >
-    {/* Total Students */}
-    <OverviewCard title="Total Students" count="120,548" />
-    {/* Total Teachers */}
-    <OverviewCard title="Total Teachers" count="8,450" />
-    {/* Total Courses */}
-    <OverviewCard title="Total Courses" count="350" />
-    {/* Total Batches */}
-    <OverviewCard title="Total Batches" count="125" />
+    <Box>
+      <OverviewCard title="My Teachers" />
+      <OverviewCard title="My Courses" />
+    </Box>
+    <Box>
+      <OverviewCard title="My Events" />
+      <OverviewCard title="My Performance" />
   </Box>
 </Box>
-
+    </Box>
     </Box>
   );
 }

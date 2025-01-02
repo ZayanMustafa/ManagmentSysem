@@ -20,7 +20,7 @@ import {
 } from '@mui/icons-material';
 import SideDraw from '../../components/draw';
 import SearchBar from '../../components/searchbar';
-import OverviewCard from '../../components/card';
+import OverviewCard from '../../components/overviewcard';
 
 export default function TeacherSlidebar() {
   const theme = useTheme();
@@ -48,10 +48,16 @@ export default function TeacherSlidebar() {
     ['/assignments/view', '/assignments/add'],
   ];
 
+  const color = {
+    primary: '#34A853',
+    accent: '#FFC107',
+    background: '#FAFAFA',
+  };
+
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar position="fixed" sx={{ zIndex: theme.zIndex.drawer + 1 }}>
+      <AppBar position="fixed" sx={{ zIndex: theme.zIndex.drawer + 1, backgroundColor: color.primary }}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -84,10 +90,11 @@ export default function TeacherSlidebar() {
         drawerWidth={drawerWidth}
         listItems={listItems}
         subOptionLinks={subOptionLinks}
+        color={color}
       />
       <Box
         component="main"
-        sx={{ flexGrow: 1, p: 3, ml: { sm: `${drawerWidth}px` } }}
+        sx={{ flexGrow: 1, p: 3, ml: { sm: `${drawerWidth}px` }, backgroundColor: color.background }}
       >
         <Toolbar />
         <Box

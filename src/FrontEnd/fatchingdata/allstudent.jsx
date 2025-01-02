@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import DataTable from "../../BackEnd/datatable/datatable";
+import DataTable from "../components/datatable";
 
 const AllStudents = () => {
   const [students, setStudents] = useState([]);
 
   useEffect(() => {
-    fetch("/mocdata/studentdata.json")
+    fetch("/src/BackEnd/mocdata/students/studentdata.json")
       .then((response) => response.json())
       .then((data) => setStudents(data))
       .catch((error) => console.error("Error fetching student data:", error));

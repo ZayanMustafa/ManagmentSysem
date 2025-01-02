@@ -21,7 +21,7 @@ import {
 } from '@mui/icons-material';
 import SideDraw from '../../components/draw';
 import SearchBar from '../../components/searchbar';
-import OverviewCard from '../../components/card';
+import OverviewCard from '../../components/overviewcard';
 
 export default function AdminSlidebar() {
   const theme = useTheme();
@@ -52,10 +52,16 @@ export default function AdminSlidebar() {
     ['/attendance/view', '/attendance/add'],
   ];
 
+  const color = {
+    primary: '#1A73E8',
+    accent: '#C0C0C0',
+    background: '#F5F5F5',
+  };
+
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex'  }}>
       <CssBaseline />
-      <AppBar position="fixed" sx={{ zIndex: theme.zIndex.drawer + 1 }}>
+      <AppBar position="fixed" sx={{ zIndex: theme.zIndex.drawer + 1, backgroundColor: color.primary }}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -79,6 +85,7 @@ export default function AdminSlidebar() {
             <Avatar alt="Admin Avatar" src="/static/images/avatar/1.jpg" />
           </IconButton>
         </Toolbar>
+        
       </AppBar>
 
       <SideDraw
@@ -88,10 +95,11 @@ export default function AdminSlidebar() {
         drawerWidth={drawerWidth}
         listItems={listItems}
         subOptionLinks={subOptionLinks}
+        color={color}
       />
       <Box
         component="main"
-        sx={{ flexGrow: 2, p: 3, ml: { sm: `${drawerWidth}px` } }}
+        sx={{ flexGrow: 2, p: 3, ml: { sm: `${drawerWidth}px` }, backgroundColor: color.background }}
       >
         <Toolbar />
         <Box
@@ -102,9 +110,11 @@ export default function AdminSlidebar() {
             p: 5,
           }}
         >
-          <OverviewCard title="Total Students" count="120,548" />
           <OverviewCard title="Total Teachers" count="8,450" />
+          <OverviewCard title="Total Students" count="120,548" />
+          <OverviewCard title="Total Classes" count="78" />
           <OverviewCard title="Total Courses" count="350" />
+          <OverviewCard title="Total Courses" count="30" />
           <OverviewCard title="Total Batches" count="125" />
         </Box>
       </Box>
