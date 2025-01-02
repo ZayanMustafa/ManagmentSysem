@@ -45,7 +45,7 @@ export default function AdminSlidebar() {
 
   const subOptionLinks = [
     ['/teachers/all', '/teachers/add'],
-    ['/students/view', '/students/add'],
+    ['/students/all', '/students/add'],
     ['/classes/view', '/classes/add'],
     ['/courses/view', '/courses/add'],
     ['/finance/view', '/finance/add'],

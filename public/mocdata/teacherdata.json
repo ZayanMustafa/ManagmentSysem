@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "name": "Sheikh Ahmed Ali",
+      "subject": "Islamic Studies",
+      "experience": "15 years",
+      "department": "Religious Education",
+      "background": "Sheikh Ahmed Ali has been teaching Islamic Studies for over 15 years and is known for his deep knowledge of Islamic jurisprudence (Fiqh) and Quranic exegesis (Tafsir). He holds a degree from Al-Azhar University and has conducted many workshops on Islamic values."
+    },
+    {
+      "id": 2,
+      "name": "Umm Ibrahim",
+      "subject": "Arabic Language",
+      "experience": "10 years",
+      "department": "Languages",
+      "background": "Umm Ibrahim has been teaching Arabic for a decade. She has a passion for teaching classical Arabic and understanding the nuances of the language in relation to Islamic texts. She holds a Master's degree in Arabic from the University of Medina."
+    },
+    {
+      "id": 3,
+      "name": "Dr. Khalid Al-Siddiq",
+      "subject": "History of Islam",
+      "experience": "20 years",
+      "department": "History",
+      "background": "Dr. Khalid Al-Siddiq has been an expert in the history of Islam, with a focus on the early years of the Muslim community. He has authored several books on Islamic history and has a Ph.D. in Islamic History from the University of Cairo."
+    }
+  ]
+  

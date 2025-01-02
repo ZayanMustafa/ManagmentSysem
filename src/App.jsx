@@ -5,6 +5,9 @@ import NotFound from "./FrontEnd/error/pagenotfound";
 import ErrorPage from "./FrontEnd/error/error";
 import StudentPage from "./FrontEnd/pages/studentpage/studentmain";
 import TeacherPage from "./FrontEnd/pages/teacherpage/teachermain";
+import AllStudent from "./FrontEnd/allnumdata/allstudent";
+import AllTeachers from "./FrontEnd/allnumdata/allteacher";
+
 
 export default function App() {
   return (
@@ -17,6 +20,8 @@ export default function App() {
             <Route path="/error" element={< ErrorPage />}></Route>
             <Route path="/student" element={< StudentPage />}></Route>
             <Route path="/teacher" element={< TeacherPage />}></Route>
+            <Route path="/students/all" element={< AllStudent />}></Route>
+            <Route path="/teachers/all" element={< AllTeachers />}></Route>
           </Routes>
       </BrowserRouter>
     </>
