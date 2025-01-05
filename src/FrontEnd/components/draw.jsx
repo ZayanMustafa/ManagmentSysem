@@ -14,10 +14,12 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
+import LogOut from '../auth/logout';
 
-const SideDraw = ({ isMobile, drawerOpen, handleDrawerToggle, drawerWidth, listItems, subOptionLinks }) => {
+const SideDraw = ({ isMobile, drawerOpen, handleDrawerToggle, drawerWidth, listItems, subOptionLinks, color }) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(drawerOpen);
   const [openSubMenu, setOpenSubMenu] = useState(null);
+  const [logoutOpen, setLogoutOpen] = useState(false);
 
   useEffect(() => {
     setIsDrawerOpen(drawerOpen);
@@ -34,6 +36,14 @@ const SideDraw = ({ isMobile, drawerOpen, handleDrawerToggle, drawerWidth, listI
     setOpenSubMenu(openSubMenu === index ? null : index);
   };
 
+  const handleLogoutClick = () => {
+    setLogoutOpen(true);
+  };
+
+  const handleLogoutClose = () => {
+    setLogoutOpen(false);
+  };
+
   return (
     <Drawer
       variant={isMobile ? "temporary" : "persistent"}
@@ -44,7 +54,7 @@ const SideDraw = ({ isMobile, drawerOpen, handleDrawerToggle, drawerWidth, listI
       }}
       sx={{
         display: { xs: 'block', sm: 'block' },
-        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, backgroundColor: color.background },
       }}
     >
       <Toolbar>
@@ -58,7 +68,7 @@ const SideDraw = ({ isMobile, drawerOpen, handleDrawerToggle, drawerWidth, listI
           <Box key={index} sx={{ mb: 1 }}>
             <ListItem
               button
-              sx={{ color: "rgba(14, 13, 13, 0.94)" }}
+              sx={{ color: color.primary }}
               onClick={() => handleSubMenuToggle(index)}
             >
               {item.icon}
@@ -73,7 +83,7 @@ const SideDraw = ({ isMobile, drawerOpen, handleDrawerToggle, drawerWidth, listI
                     key={subIndex}
                     component={Link}
                     to={subOptionLinks[index][subIndex]}
-                    sx={{ pl: 4, marginLeft: 2, color: 'rgba(29, 28, 28, 0.7)', mb: 1 }}
+                    sx={{ pl: 4, marginLeft: 2, color: color.accent, mb: 1 }}
                   >
                     <ListItemText primary={subOption} />
                   </ListItem>
@@ -88,13 +98,13 @@ const SideDraw = ({ isMobile, drawerOpen, handleDrawerToggle, drawerWidth, listI
       <List>
         <ListItem
           button sx={{ color: 'black', mt: 1 }}
-          component={Link}
-          to="/logout"
+          onClick={handleLogoutClick}
         >
           {listItems[listItems.length - 1].icon}
           <ListItemText primary={listItems[listItems.length - 1].text} />
         </ListItem>
       </List>
+      <LogOut open={logoutOpen} onClose={handleLogoutClose} />
     </Drawer>
   );
 };

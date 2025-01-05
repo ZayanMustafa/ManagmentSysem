@@ -10,6 +10,7 @@ import AllTeachers from "./FrontEnd/fatchingdata/allteacher";
 import AllCourses from "./FrontEnd/fatchingdata/allcourses";
 import AddTeacher from "./FrontEnd/forms/addteacherform";
 import AddStudent from "./FrontEnd/forms/addstudentform";
+import LogOut from "./FrontEnd/auth/logout";
 
 
 export default function App() {
@@ -20,6 +21,7 @@ export default function App() {
             <Route path="/" element={< SignIn />}></Route> 
             <Route path="*" element={< NotFound />}></Route>
             <Route path="/error" element={< ErrorPage />}></Route>
+            <Route path="/logout" element={ < LogOut/> }></Route> 
             
             <Route path="/admin" element={< AdminPage />}></Route> 
             <Route path="/student" element={< StudentPage />}></Route>

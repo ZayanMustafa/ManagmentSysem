@@ -22,8 +22,9 @@ import {
 import SideDraw from '../../components/draw';
 import SearchBar from '../../components/searchbar';
 import OverviewCard from '../../components/overviewcard';
+import LogOut from '../../auth/logout';
 
-export default function AdminSlidebar() {
+export default function AdminSlidebar () {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const [drawerOpen, setDrawerOpen] = React.useState(!isMobile);
@@ -40,7 +41,7 @@ export default function AdminSlidebar() {
     { icon: <BookIcon />, text: 'Courses', subOptions: ['View Courses', 'Add Course'] },
     { icon: <PeopleIcon />, text: 'Attendance', subOptions: ['View Attendance', 'Add Attendance Record'] },
     { icon: <AccountBalanceIcon />, text: 'Finance', subOptions: ['View Finance', 'Add Finance Record'] },
-    { icon: <LogoutIcon />, text: 'Log out', subOptions: [] },
+    { icon: <LogoutIcon />, text: 'Log out', subOptions: [], link: '/logout' },
   ];
 
   const subOptionLinks = [
@@ -118,6 +119,7 @@ export default function AdminSlidebar() {
           <OverviewCard title="Total Batches" count="125" />
         </Box>
       </Box>
+      <LogOut />
     </Box>
   );
 }

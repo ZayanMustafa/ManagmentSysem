@@ -20,6 +20,7 @@ import {
 } from '@mui/icons-material';
 import SideDraw from '../../components/draw';
 import OverviewCard from '../../components/overviewcard';
+import LogOut from '../../auth/logout';
 
 export default function StudentSlidebar() {
   const theme = useTheme();
@@ -36,7 +37,7 @@ export default function StudentSlidebar() {
     { icon: <PeopleIcon />, text: 'Events', subOptions: ['View Events', 'Add Event'] },
     { icon: <BookIcon />, text: 'Courses', subOptions: ['View Courses', 'Add Course'] },
     { icon: <PeopleIcon />, text: 'Performance', subOptions: ['View Performance'] },
-    { icon: <LogoutIcon />, text: 'Log out', subOptions: [] },
+    { icon: <LogoutIcon />, text: 'Log out', subOptions: [], link: '/logout' },
   ];
 
   const subOptionLinks = [
@@ -114,6 +115,7 @@ export default function StudentSlidebar() {
   </Box>
 </Box>
     </Box>
+    <LogOut />
     </Box>
   );
 }

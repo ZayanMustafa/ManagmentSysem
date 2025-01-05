@@ -21,6 +21,7 @@ import {
 import SideDraw from '../../components/draw';
 import SearchBar from '../../components/searchbar';
 import OverviewCard from '../../components/overviewcard';
+import LogOut from '../../auth/logout';
 
 export default function TeacherSlidebar() {
   const theme = useTheme();
@@ -38,7 +39,7 @@ export default function TeacherSlidebar() {
     { icon: <BookIcon />, text: 'Courses Outline', subOptions: ['View Courses', 'Add Course'] },
     { icon: <PeopleIcon />, text: 'Assignments', subOptions: ['Add Assignments', 'View Assignments'] },
     { icon: <PeopleIcon />, text: 'Request', subOptions: [] },
-    { icon: <LogoutIcon />, text: 'Log out', subOptions: [] },
+    { icon: <LogoutIcon />, text: 'Log out', subOptions: [], link: '/logout' },
   ];
 
   const subOptionLinks = [
@@ -110,6 +111,7 @@ export default function TeacherSlidebar() {
           <OverviewCard title="Total Courses" count="350" />
         </Box>
       </Box>
+      <LogOut />
     </Box>
   );
 }
