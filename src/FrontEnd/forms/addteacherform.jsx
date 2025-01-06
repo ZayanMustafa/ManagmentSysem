@@ -4,6 +4,7 @@ import ImageUpload from "../components/uploadimage";
 import FormInput from "../components/forminput";
 import Dropdown from "../components/dropdown";
 import CalendarField from "../components/calender";
+import Navbar from "../components/navbar";
 
 const AddTeacher = () => {
   const [formData, setFormData] = useState({
@@ -40,6 +41,8 @@ const AddTeacher = () => {
   };
 
   return (
+    <>
+      <Navbar link="/admin" title={"Admin Pannel "}/>
     <Box
       sx={{
         padding: 3,
@@ -154,6 +157,8 @@ const AddTeacher = () => {
         </Box>
       </form>
     </Box>
+    </>
+
   );
 };
 

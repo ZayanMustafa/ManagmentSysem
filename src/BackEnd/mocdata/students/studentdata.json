@@ -3,17 +3,22 @@
       "name": "Ahmed Ali",
       "age": 25,
       "course": "Web Development",
-      "batch": "Batch A",
+      "batch": "8",
       "id": 1,
+      "education" : "Matric",
       "timings": "9:00 AM - 12:00 PM"
+
     },
     {
       "name": "Fatima Zahra",
       "age": 22,
+      "mobileNo" : null ,
       "course": "Data Science",
-      "batch": "Batch B",
+      "batch": "4",
       "id": 2 ,
-      "timings": "1:00 PM - 4:00 PM"
+      "address" : null , 
+      "education" : "Matric",
+      "timings": "1:00 PM - 4:00 PM" 
     }
   ]
   

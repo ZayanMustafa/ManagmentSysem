@@ -13,10 +13,12 @@ const ImageUpload = ({ imagePreview, onImageChange }) => (
       justifyContent: "center",
       alignItems: "center",
       position: "relative",
+      requied: true 
     }}
     component="label"
+
   >
-    <input type="file" hidden accept="image/*" onChange={onImageChange} />
+    <input type="file" hidden accept="image/*" onChange={onImageChange} required />
     {imagePreview ? (
       <Avatar src={imagePreview} sx={{ width: 120, height: 120 }} />
     ) : (

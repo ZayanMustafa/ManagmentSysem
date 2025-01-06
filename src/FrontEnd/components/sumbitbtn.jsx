@@ -1,11 +1,10 @@
 import React from 'react';
 import Button from '@mui/material/Button';
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css'; 
+import 'react-toastify/dist/ReactToastify.css';
 
-
-const notify = () => {
-  toast.success("Form submitted successfully! ✅", {
+const notify = (message) => {
+  toast.success(message, {
     position: "top-center",
     autoClose: 3000,
     hideProgressBar: true,
@@ -16,19 +15,24 @@ const notify = () => {
   });
 };
 
-const SubmitBtn = ({ label, color }) => (
-  <>
-    <Button
-      variant="contained"
-      type="submit"
-      sx={{ backgroundColor: color, '&:hover': { backgroundColor: color } }}
-      onClick={notify}  
-    >
-      {label}
-    </Button>
+const SubmitBtn = ({ label, color, notifyMessage }) => {
+  const handleClick = () => {
+    notify(notifyMessage);
+  };
 
-    <ToastContainer />  
-  </>
-);
+  return (
+    <>
+      <Button
+        variant="contained"
+        type="button"
+        sx={{ backgroundColor: color, '&:hover': { backgroundColor: color } }}
+        onClick={handleClick}
+      >
+        {label}
+      </Button>
+      <ToastContainer />
+    </>
+  );
+};
 
 export default SubmitBtn;

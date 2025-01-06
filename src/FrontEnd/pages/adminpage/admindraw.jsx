@@ -15,8 +15,11 @@ import {
   Menu as MenuIcon,
   Notifications as NotificationsIcon,
   People as PeopleIcon,
+  Class as ClassIcon,
   Book as BookIcon,
+  Event as EventIcon,
   AccountBalance as AccountBalanceIcon,
+  Layers as LayersIcon,
   Logout as LogoutIcon,
 } from '@mui/icons-material';
 import SideDraw from '../../components/draw';
@@ -37,10 +40,11 @@ export default function AdminSlidebar () {
   const listItems = [
     { icon: <PeopleIcon />, text: 'Teachers', subOptions: ['All Teachers', 'Add Teacher'] },
     { icon: <PeopleIcon />, text: 'Students', subOptions: ['View Students', 'Add Student'] },
-    { icon: <PeopleIcon />, text: 'Classes', subOptions: ['View Classes', 'Add Classes'] },
+    { icon: <ClassIcon />, text: 'Classes', subOptions: ['View Classes', 'Add Classes'] },
     { icon: <BookIcon />, text: 'Courses', subOptions: ['View Courses', 'Add Course'] },
-    { icon: <PeopleIcon />, text: 'Attendance', subOptions: ['View Attendance', 'Add Attendance Record'] },
+    { icon: <EventIcon />, text: 'Attendance', subOptions: ['View Attendance', 'Add Attendance Record'] },
     { icon: <AccountBalanceIcon />, text: 'Finance', subOptions: ['View Finance', 'Add Finance Record'] },
+    { icon: <LayersIcon />, text: 'Batches', subOptions: ['View Batches', 'Add New Batch', 'Merge Batch'] },
     { icon: <LogoutIcon />, text: 'Log out', subOptions: [], link: '/logout' },
   ];
 
@@ -49,6 +53,7 @@ export default function AdminSlidebar () {
     ['/students/all', '/students/add'],
     ['/classes/view', '/classes/add'],
     ['/courses/view', '/courses/add'],
+    ['/batch/view', '/batch/add' ,'/batch/merge'],
     ['/finance/view', '/finance/add'],
     ['/attendance/view', '/attendance/add'],
   ];
@@ -57,6 +62,7 @@ export default function AdminSlidebar () {
     primary: '#1A73E8',
     accent: '#C0C0C0',
     background: '#F5F5F5',
+    listItem: '#000000',
   };
 
   return (

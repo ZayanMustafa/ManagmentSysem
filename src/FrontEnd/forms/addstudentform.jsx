@@ -15,6 +15,7 @@ import {
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
 import Navbar from "../components/navbar";
 import SubmitBtn from "../components/sumbitbtn";
+import { toast } from 'react-toastify';
 
 const AddStudent = () => {
   const [formData, setFormData] = useState({
@@ -45,7 +46,27 @@ const AddStudent = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    toast.success("Student Added successfully! 😊✅", {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
     console.log("Form Submitted:", formData);
+    setFormData({
+      name: "",
+      phone: "",
+      email: "",
+      courses: "",
+      address: "",
+      dob: "",
+      education: "",
+      
+    });
+    setImagePreview(null);
   };
 
   return (
@@ -76,7 +97,7 @@ const AddStudent = () => {
         </Box>
         <form onSubmit={handleSubmit}>
           <Grid container spacing={2}>
-            {/* Avatar Image Upload */}
+
             <Grid
               item
               xs={12}
@@ -115,6 +136,7 @@ const AddStudent = () => {
                 fullWidth
                 label="Name"
                 name="name"
+                value={formData.name}
                 onChange={handleInputChange}
                 required
               />
@@ -125,6 +147,7 @@ const AddStudent = () => {
                 fullWidth
                 label="Phone Number"
                 name="phone"
+                value={formData.phone}
                 onChange={handleInputChange}
                 required
                 type="tel"
@@ -136,6 +159,7 @@ const AddStudent = () => {
                 fullWidth
                 label="Email"
                 name="email"
+                value={formData.email}
                 onChange={handleInputChange}
                 required
                 type="email"
@@ -167,6 +191,7 @@ const AddStudent = () => {
                 fullWidth
                 label="Address"
                 name="address"
+                value={formData.address}
                 onChange={handleInputChange}
                 required
               />
@@ -177,6 +202,7 @@ const AddStudent = () => {
                 fullWidth
                 label="Date of Birth"
                 name="dob"
+                value={formData.dob}
                 onChange={handleInputChange}
                 type="date"
                 InputLabelProps={{ shrink: true }}

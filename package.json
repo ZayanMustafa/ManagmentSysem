@@ -21,6 +21,7 @@
     "@react-aria/focus": "^3.19.0",
     "@react-aria/interactions": "^3.22.5",
     "@react-aria/utils": "^3.26.0",
+    "axios": "^1.7.9",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",
