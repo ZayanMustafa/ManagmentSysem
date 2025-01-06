@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const notify = (message) => {
+export const notify = (message) => {
   toast.success(message, {
     position: "top-center",
     autoClose: 3000,
