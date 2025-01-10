@@ -45,6 +45,7 @@ export default function AdminSlidebar () {
     { icon: <EventIcon />, text: 'Attendance', subOptions: ['View Attendance', 'Add Attendance Record'] },
     { icon: <AccountBalanceIcon />, text: 'Finance', subOptions: ['View Finance', 'Add Finance Record'] },
     { icon: <LayersIcon />, text: 'Batches', subOptions: ['View Batches', 'Add New Batch', 'Merge Batch'] },
+    { icon: <LayersIcon />, text: 'Quiz', subOptions: ['View Quiz', 'Add New Quiz'] },
     { icon: <LogoutIcon />, text: 'Log out', subOptions: [], link: '/logout' },
   ];
 
@@ -54,6 +55,7 @@ export default function AdminSlidebar () {
     ['/classes/view', '/classes/add'],
     ['/courses/view', '/courses/add'],
     ['/batch/view', '/batch/add' ,'/batch/merge'],
+    ['/finance/view', '/finance/add'],
     ['/finance/view', '/finance/add'],
     ['/attendance/view', '/attendance/add'],
   ];
@@ -106,7 +108,7 @@ export default function AdminSlidebar () {
       />
       <Box
         component="main"
-        sx={{ flexGrow: 2, p: 3, ml: { sm: `${drawerWidth}px` }, backgroundColor: color.background }}
+        sx={{ flexGrow: 2, p: 3, ml: { sm: `${drawerWidth}px` }}}
       >
         <Toolbar />
         <Box
@@ -121,8 +123,8 @@ export default function AdminSlidebar () {
           <OverviewCard title="Total Students" count="120,548" />
           <OverviewCard title="Total Classes" count="78" />
           <OverviewCard title="Total Courses" count="350" />
-          <OverviewCard title="Total Courses" count="30" />
-          <OverviewCard title="Total Batches" count="125" />
+          <OverviewCard title="Quiz" count="30" />
+          <OverviewCard title="Total Cities" count="125" />
         </Box>
       </Box>
       <LogOut />
