@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Box, Container, Typography, Paper, Grid } from '@mui/material';
-import SubmitBtn from '../components/sumbitbtn';
+import SubmitBtn from '../components/submitbtn';
 import FormInput from '../components/forminput';
 import Dropdown from '../components/dropdown';
-
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';

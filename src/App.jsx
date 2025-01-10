@@ -13,6 +13,7 @@ import AddStudent from "./FrontEnd/forms/addstudentform";
 import LogOut from "./FrontEnd/auth/logout";
 import FinaceUpload from "./FrontEnd/finance/addreport";
 import AddCourse from "./FrontEnd/forms/addcourseform";
+import  AddQuiz  from "./FrontEnd/forms/addquizform";
 
 
 export default function App() {
@@ -37,6 +38,7 @@ export default function App() {
             <Route path="/students/add" element={< AddStudent />}></Route>
             <Route path="/finance/add" element={ < FinaceUpload />}> </Route>
             <Route path="/courses/add" element={ < AddCourse />}> </Route>
+            <Route path="/quiz/add" element={ < AddQuiz />}> </Route>
 
           </Routes>
       </BrowserRouter>
