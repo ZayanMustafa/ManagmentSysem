@@ -29,3 +29,4 @@ router.post('/api/courses', (req, res) => {
 });
 
 module.exports = router;
+
