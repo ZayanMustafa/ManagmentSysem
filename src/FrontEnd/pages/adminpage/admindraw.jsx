@@ -17,7 +17,6 @@ export default function AdminSlidebar() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const [drawerOpen, setDrawerOpen] = React.useState(!isMobile);
-  const [alertOpen, setAlertOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
     setDrawerOpen(!drawerOpen);

@@ -13,7 +13,7 @@ import {
   IconButton,
 } from "@mui/material";
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
-import Navbar from "../components/navbar";
+import Navbar from "../components/navbar"; // Custom Navbar Component
 import { toast } from 'react-toastify';
 import axios from 'axios';
 
@@ -61,6 +61,7 @@ const AddCourse = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      // Sending data to the backend API (MongoDB) using axios
       await axios.post('/api/courses', formData);
       notify("Course Added successfully! 😊✅");
       console.log("Course Form Submitted:", formData);
@@ -201,7 +202,7 @@ const AddCourse = () => {
             <Grid item xs={12}>
               <TextField
                 fullWidth
-                label="Basic Des."
+                label="Basic Description"
                 name="dec"
                 value={formData.dec}
                 onChange={handleInputChange}
@@ -212,7 +213,7 @@ const AddCourse = () => {
           </Grid>
 
           <Box sx={{ textAlign: "center", marginTop: 3 }}>
-          <Button type="submit" variant="contained" color="primary">
+            <Button type="submit" variant="contained" color="primary">
               Submit
             </Button>
           </Box>

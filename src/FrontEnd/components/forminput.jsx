@@ -13,3 +13,4 @@ const FormInput = ({ label, name, type = "text", onChange }) => (
 );
 
 export default FormInput;
+ 

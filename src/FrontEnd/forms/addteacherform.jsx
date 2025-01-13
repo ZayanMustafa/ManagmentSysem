@@ -22,7 +22,8 @@ const AddTeacher = () => {
   });
 
   const [imagePreview, setImagePreview] = useState(null);
-
+  const experienceyears = [ "1-3 years" , "4-6 years" , "7-10 years"]
+  const education = [ "Bachlor's" , "Masters" , "Phd"    ]
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -151,7 +152,7 @@ const AddTeacher = () => {
                 label="Experience"
                 name="experience"
                 value={formData.experience}
-                options={["1-3 years", "4-6 years", "7+ years"]}
+                options={experienceyears}
                 onChange={handleInputChange}
               />
             </Grid>
@@ -163,7 +164,7 @@ const AddTeacher = () => {
                 onChange={handleInputChange}
               />
             </Grid>
-
+   
             <Grid item xs={12} md={6}>
               <CalendarField
                 label="Date of Birth"
@@ -177,7 +178,7 @@ const AddTeacher = () => {
                 label="Education"
                 name="education"
                 value={formData.education}
-                options={["Bachelor's", "Master's", "Ph.D."]}
+                options={education}
                 onChange={handleInputChange}
               />
             </Grid>

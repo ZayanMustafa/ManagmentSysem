@@ -1,21 +1,13 @@
 import React, { useState } from "react";
-import {
-  Box,
-  Button,
-  Grid,
-  TextField,
-  Typography,
-  Avatar,
-  MenuItem,
-  Select,
-  FormControl,
-  InputLabel,
-  IconButton,
-} from "@mui/material";
-import CameraAltIcon from "@mui/icons-material/CameraAlt";
+import { Box, Grid, Typography } from "@mui/material";
 import Navbar from "../components/navbar";
 import { toast } from 'react-toastify';
 import axios from 'axios';
+import SubmitBtn from "../components/submitbtn";
+import FormInput from "../components/forminput";
+import Dropdown from "../components/dropdown";
+import CalendarField from "../components/calender";
+import ImageUpload from "../components/uploadimage";
 
 const AddStudent = () => {
   const [formData, setFormData] = useState({
@@ -29,7 +21,9 @@ const AddStudent = () => {
   });
 
   const [imagePreview, setImagePreview] = useState(null);
-
+  const education = ["Web Development", "App Development", "Machine Learning", "Data Science", "3D Game Development"]
+  const courses = ["Web Development", "App Development", "Machine Learning", "Data Science", "3D Game Development"]
+ 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -61,7 +55,6 @@ const AddStudent = () => {
     try {
       await axios.post('/api/students', formData);
       notify("Student Added successfully! 😊✅");
-      console.log("Student Form Submitted:", formData);
       setFormData({
         name: "",
         phone: "",
@@ -106,139 +99,82 @@ const AddStudent = () => {
         </Box>
         <form onSubmit={handleSubmit}>
           <Grid container spacing={2}>
-            <Grid
-              item
-              xs={12}
-              textAlign="center"
-              sx={{ marginTop: 2, marginBottom: 2 }}
-            >
-              <IconButton
-                sx={{
-                  width: 120,
-                  height: 120,
-                  borderRadius: "50%",
-                  backgroundColor: "#e0e0e0",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-                component="label"
-              >
-                <input
-                  type="file"
-                  hidden
-                  accept="image/*"
-                  onChange={handleImageUpload}
-                />
-                {imagePreview ? (
-                  <Avatar src={imagePreview} sx={{ width: 120, height: 120 }} />
-                ) : (
-                  <Avatar sx={{ width: 120, height: 120 }}>Your Picture</Avatar>
-                )}
-                <CameraAltIcon sx={{ position: "absolute", bottom: 0, right: 0 }} />
-              </IconButton>
-            </Grid>
-
-            <Grid item xs={12} md={6}>
-              <TextField
-                fullWidth
-                label="Name"
-                name="name"
-                value={formData.name}
-                onChange={handleInputChange}
-                required
+            <Grid 
+            item xs={12}
+            textAlign="center" 
+            sx={{ marginTop: 2, marginBottom: 2 }}>
+              <ImageUpload
+                imagePreview={imagePreview}
+                onImageChange={handleImageUpload}
               />
             </Grid>
 
             <Grid item xs={12} md={6}>
-              <TextField
-                fullWidth
+              <FormInput 
+               label="Name"
+               name="name"
+               value={formData.name}
+               onChange={handleInputChange} />
+            </Grid>
+
+            <Grid item xs={12} md={6}>
+              <FormInput 
                 label="Phone Number"
                 name="phone"
                 value={formData.phone}
                 onChange={handleInputChange}
-                required
-                type="tel"
-              />
+                type="tel" />
             </Grid>
 
             <Grid item xs={12} md={6}>
-              <TextField
-                fullWidth
+              <FormInput 
                 label="Email"
                 name="email"
-                value={formData.email}
+                value={formData.email} 
                 onChange={handleInputChange}
-                required
-                type="email"
-              />
+                type="email" />
             </Grid>
 
             <Grid item xs={12} md={6}>
-              <FormControl fullWidth>
-                <InputLabel>Courses</InputLabel>
-                <Select
-                  name="courses"
-                  value={formData.courses}
-                  onChange={handleInputChange}
-                  required
-                >
-                  <MenuItem value="Web Development">Web Development</MenuItem>
-                  <MenuItem value="App Development">App Development</MenuItem>
-                  <MenuItem value="Machine Learning">Machine Learning</MenuItem>
-                  <MenuItem value="Data Science">Data Science</MenuItem>
-                  <MenuItem value="3D Game Development">
-                    3D Game Development
-                  </MenuItem>
-                </Select>
-              </FormControl>
+              <Dropdown
+                label="Courses"
+                name="courses"
+                value={formData.courses}
+                onChange={handleInputChange}
+                options={courses} />
             </Grid>
 
             <Grid item xs={12}>
-              <TextField
-                fullWidth
+              <FormInput 
                 label="Address"
                 name="address"
                 value={formData.address}
-                onChange={handleInputChange}
-                required
-              />
+                onChange={handleInputChange} />
             </Grid>
 
             <Grid item xs={12} md={6}>
-              <TextField
-                fullWidth
-                label="Date of Birth"
-                name="dob"
-                value={formData.dob}
-                onChange={handleInputChange}
-                type="date"
-                InputLabelProps={{ shrink: true }}
-                required
-              />
+              <CalendarField 
+                 label="Date of Birth" 
+                 name="dob"
+                 onChange={handleInputChange} />
             </Grid>
 
             <Grid item xs={12} md={6}>
-              <FormControl fullWidth>
-                <InputLabel>Education</InputLabel>
-                <Select
-                  name="education"
-                  value={formData.education}
-                  onChange={handleInputChange}
-                  required
-                >
-                  <MenuItem value="Matric">Matric</MenuItem>
-                  <MenuItem value="Hifz">Hifz</MenuItem>
-                  <MenuItem value="Intermediate">Intermediate</MenuItem>
-                </Select>
-              </FormControl>
+              <Dropdown 
+                label="Education"
+                name="education"
+                value={formData.education}
+                onChange={handleInputChange}
+                options={education} />
             </Grid>
           </Grid>
 
           <Box sx={{ textAlign: "center", marginTop: 3 }}>
-            <Button type="submit" variant="contained" color="primary">
-              Submit
-            </Button>
+            <SubmitBtn 
+            label="Submit"
+            color="primary"
+            notifyMessage="Student added successfully!"
+            onClose={() => { console.log("Form Sumbit Sucessfully")}} />
           </Box>
         </form>
       </Box>
