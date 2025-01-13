@@ -10,6 +10,7 @@ import {
   CssBaseline,
   useTheme,
   useMediaQuery,
+  Tooltip,
 } from '@mui/material';
 import {
   Menu as MenuIcon,
@@ -71,14 +72,16 @@ export default function StudentSlidebar() {
             Student Panel
           </Typography>
           <IconButton color="inherit">
-            <Badge
-            sx={{ mr: 1}}
-            badgeContent={2} color="secondary">
+          < Tooltip title="Notifications"> 
+            <Badge sx={{ mr: 1}}  badgeContent={2} color="secondary">
               <NotificationsIcon />
             </Badge>
+            </Tooltip>
           </IconButton>
-          <IconButton  color="inherit">
+            <IconButton  color="inherit">
+          <Tooltip title="Student Avatar">
             <Avatar alt="Student Avatar" src="/static/images/avatar/1.jpg" />
+          </Tooltip>
           </IconButton>
         </Toolbar>
       </AppBar>

@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '@mui/material/Button';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 
 export const notify = (message, type = "success") => {
   if (type === "success") {
@@ -27,23 +26,23 @@ export const notify = (message, type = "success") => {
   }
 };
 
-const SubmitBtn = ({ label, color, notifyMessage }) => {
+const SubmitBtn = ({ label, color, notifyMessage, onClose }) => {
   const handleClick = () => {
     notify(notifyMessage);
+    setTimeout(() => {
+      onClose(); // Close dialog after 3 seconds
+    }, 3000); 
   };
 
   return (
-    <>
-      <Button
-        variant="contained"
-        type="button"
-        sx={{ backgroundColor: color, '&:hover': { backgroundColor: color } }}
-        onClick={handleClick}
-      >
-        {label}
-      </Button>
-      <ToastContainer />
-    </>
+    <Button
+      variant="contained"
+      type="button"
+      sx={{ backgroundColor: color, '&:hover': { backgroundColor: color } }}
+      onClick={handleClick}
+    >
+      {label}
+    </Button>
   );
 };
 

@@ -10,6 +10,7 @@ import {
   CssBaseline,
   useTheme,
   useMediaQuery,
+  Tooltip,
 } from '@mui/material';
 import {
   Menu as MenuIcon,
@@ -55,6 +56,7 @@ export default function TeacherSlidebar() {
     background: '#FAFAFA',
   };
 
+
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
@@ -75,11 +77,15 @@ export default function TeacherSlidebar() {
           <SearchBar />
           <IconButton color="inherit">
             <Badge sx={{ mr: 1 }} badgeContent={10} color="secondary">
-              <NotificationsIcon />
-            </Badge>
+            < Tooltip title="Notifications" > 
+              < NotificationsIcon />
+            </Tooltip>
+           </Badge>
           </IconButton>
           <IconButton color="inherit">
-            <Avatar alt="Teacher Avatar" src="/static/images/avatar/1.jpg" />
+            <Tooltip title="Teacher Avatar"> 
+              <Avatar alt="Teacher Avatar" src="/static/images/avatar/1.jpg" /> 
+            </Tooltip>
           </IconButton>
         </Toolbar>
       </AppBar>

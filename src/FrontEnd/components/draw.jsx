@@ -1,22 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import {
-  Drawer,
-  Toolbar,
-  Divider,
-  List,
-  ListItem,
-  ListItemText,
-  IconButton,
-  Box,
-  Collapse,
-} from '@mui/material';
+import { Drawer, Toolbar, Divider, List, ListItem, ListItemText, IconButton, Box, Collapse, Tooltip } from '@mui/material';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 import LogOut from '../auth/logout';
 
-const SideDraw = ({ isMobile, drawerOpen, handleDrawerToggle, drawerWidth, listItems, subOptionLinks, color }) => {
+const SideDraw = ({
+  isMobile,
+  drawerOpen,
+  handleDrawerToggle,
+  drawerWidth,
+  listItems,
+  subOptionLinks,
+  color,
+  notificationIcon,
+  avatar,
+  title, 
+  tooltip, 
+}) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(drawerOpen);
   const [openSubMenu, setOpenSubMenu] = useState(null);
   const [logoutOpen, setLogoutOpen] = useState(false);
@@ -49,18 +51,30 @@ const SideDraw = ({ isMobile, drawerOpen, handleDrawerToggle, drawerWidth, listI
       variant={isMobile ? "temporary" : "persistent"}
       open={isDrawerOpen}
       onClose={handleToggle}
-      ModalProps={{
-        keepMounted: true,
-      }}
+      ModalProps={{ keepMounted: true }}
       sx={{
         display: { xs: 'block', sm: 'block' },
         '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, backgroundColor: color.background },
       }}
     >
       <Toolbar>
-        <IconButton onClick={handleToggle}>
-          {isDrawerOpen ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-        </IconButton>
+        <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+          <IconButton onClick={handleToggle}>
+            {isDrawerOpen ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+          </IconButton>
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            {notificationIcon && (
+              <Tooltip title={ tooltip ||"Notifications"}>
+                <IconButton>{notificationIcon}</IconButton>
+              </Tooltip>
+            )}
+            {avatar && (
+              <Tooltip title={title || "Avatar"}>
+                <IconButton>{avatar}</IconButton>
+              </Tooltip>
+            )}
+          </Box>
+        </Box>
       </Toolbar>
       <Divider />
       <List>

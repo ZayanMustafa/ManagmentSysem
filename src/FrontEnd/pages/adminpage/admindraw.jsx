@@ -1,51 +1,47 @@
 import React from 'react';
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  IconButton,
-  Avatar,
-  Badge,
-  Box,
-  CssBaseline,
-  useTheme,
-  useMediaQuery,
-} from '@mui/material';
-import {
-  Menu as MenuIcon,
-  Notifications as NotificationsIcon,
-  People as PeopleIcon,
-  Class as ClassIcon,
-  Book as BookIcon,
-  Event as EventIcon,
-  AccountBalance as AccountBalanceIcon,
-  Layers as LayersIcon,
-  Logout as LogoutIcon,
-} from '@mui/icons-material';
+import { AppBar, Toolbar, Typography, IconButton, Badge, Box, CssBaseline, useTheme, useMediaQuery, Tooltip, Avatar } from '@mui/material';
+import { Menu as MenuIcon, Notifications as NotificationsIcon, Logout as LogoutIcon } from '@mui/icons-material';
 import SideDraw from '../../components/draw';
 import SearchBar from '../../components/searchbar';
-import OverviewCard from '../../components/overviewcard';
 import LogOut from '../../auth/logout';
+import OverviewCard from '../../components/overviewcard';
+// Import missing icons
+import PeopleIcon from '@mui/icons-material/People';
+import ClassIcon from '@mui/icons-material/Class';
+import BookIcon from '@mui/icons-material/Book';
+import EventIcon from '@mui/icons-material/Event';
+import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
+import LayersIcon from '@mui/icons-material/Layers';
 
-export default function AdminSlidebar () {
+export default function AdminSlidebar() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const [drawerOpen, setDrawerOpen] = React.useState(!isMobile);
-  const drawerWidth = 200;
+  const [alertOpen, setAlertOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
     setDrawerOpen(!drawerOpen);
   };
 
+  const handleAlertOpen = () => {
+    setAlertOpen(true);
+  };
+
   const listItems = [
-    { icon: <PeopleIcon />, text: 'Teachers', subOptions: ['All Teachers', 'Add Teacher'] },
-    { icon: <PeopleIcon />, text: 'Students', subOptions: ['View Students', 'Add Student'] },
-    { icon: <ClassIcon />, text: 'Classes', subOptions: ['View Classes', 'Add Classes'] },
+    { icon: <  PeopleIcon />, text: 'Teachers', subOptions: ['All Teachers', 'Add Teacher'] },
+    { icon: < PeopleIcon />, text: 'Students', subOptions: ['View Students', 'Add Student'] },
+    { icon: < ClassIcon />, text: 'Classes', subOptions: ['View Classes', 'Add Classes'] },
     { icon: <BookIcon />, text: 'Courses', subOptions: ['View Courses', 'Add Course'] },
     { icon: <EventIcon />, text: 'Attendance', subOptions: ['View Attendance', 'Add Attendance Record'] },
     { icon: <AccountBalanceIcon />, text: 'Finance', subOptions: ['View Finance', 'Add Finance Record'] },
     { icon: <LayersIcon />, text: 'Batches', subOptions: ['View Batches', 'Add New Batch', 'Merge Batch'] },
     { icon: <LayersIcon />, text: 'Quiz', subOptions: ['View Quiz', 'Add New Quiz'] },
+    { 
+      icon: <LogoutIcon />, 
+      text: 'Alert', 
+      subOptions: ['Send Alert'], 
+      onClick: handleAlertOpen, // Attach the handler here 
+    },
     { icon: <LogoutIcon />, text: 'Log out', subOptions: [], link: '/logout' },
   ];
 
@@ -54,10 +50,11 @@ export default function AdminSlidebar () {
     ['/students/all', '/students/add'],
     ['/classes/view', '/classes/add'],
     ['/courses/view', '/courses/add'],
-    ['/batch/view', '/batch/add' ,'/batch/merge'],
-    ['/finance/view', '/finance/add'],
+    ['/batch/view', '/batch/add', '/batch/merge'],
     ['/finance/view', '/finance/add'],
     ['/attendance/view', '/attendance/add'],
+    ['/quiz/view', '/quiz/add'],
+    ['/alert/send'],
   ];
 
   const color = {
@@ -68,7 +65,7 @@ export default function AdminSlidebar () {
   };
 
   return (
-    <Box sx={{ display: 'flex'  }}>
+    <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar position="fixed" sx={{ zIndex: theme.zIndex.drawer + 1, backgroundColor: color.primary }}>
         <Toolbar>
@@ -87,28 +84,35 @@ export default function AdminSlidebar () {
           <SearchBar />
           <IconButton color="inherit">
             <Badge sx={{ mr: 1 }} badgeContent={12} color="secondary">
-              <NotificationsIcon />
+              <Tooltip title="Notifications" >
+                <NotificationsIcon />
+              </Tooltip>
             </Badge>
           </IconButton>
           <IconButton color="inherit">
-            <Avatar alt="Admin Avatar" src="/static/images/avatar/1.jpg" />
+            <Tooltip title="Admin Avatar">
+              <Avatar alt="Admin Avatar" src="/static/images/avatar/1.jpg" />
+            </Tooltip>
           </IconButton>
         </Toolbar>
-        
       </AppBar>
 
       <SideDraw
         isMobile={isMobile}
         drawerOpen={drawerOpen}
         handleDrawerToggle={handleDrawerToggle}
-        drawerWidth={drawerWidth}
+        drawerWidth={200}
         listItems={listItems}
         subOptionLinks={subOptionLinks}
         color={color}
+        notificationIcon={<NotificationsIcon />}
+        avatar={<Avatar alt="Admin Avatar" src="/static/images/avatar/1.jpg" />}
+        title="Admin Profile"
+        tooltip="Admin Notification"
       />
       <Box
         component="main"
-        sx={{ flexGrow: 2, p: 3, ml: { sm: `${drawerWidth}px` }}}
+        sx={{ flexGrow: 1, p: 3, ml: { sm: `${200}px` } }}
       >
         <Toolbar />
         <Box
@@ -127,6 +131,7 @@ export default function AdminSlidebar () {
           <OverviewCard title="Total Cities" count="125" />
         </Box>
       </Box>
+  
       <LogOut />
     </Box>
   );
