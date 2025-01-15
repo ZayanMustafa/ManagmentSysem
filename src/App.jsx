@@ -16,7 +16,6 @@ import AddCourse from "./FrontEnd/forms/addcourseform";
 import  AddQuiz  from "./FrontEnd/forms/addquizform";
 import SendAlert from "./FrontEnd/alerts/sendalerts";
 import AddBatch from "./FrontEnd/forms/addclassform";
-// import AdminDrawer from "./FrontEnd/admin/drawer";
 
 
 export default function App() {
@@ -44,7 +43,7 @@ export default function App() {
             <Route path="/quiz/add" element={ < AddQuiz />}> </Route>
 
             <Route path="/alert/send" element={ < SendAlert />}> </Route>
-            <Route path="/alert" element={ < AddBatch/> }></Route>
+            <Route path="/classes/add" element={ < AddBatch/> }></Route>
 
           </Routes>
       </BrowserRouter>

@@ -114,7 +114,7 @@ const AddClass = () => {
             < SubmitBtn
               label="Submit"
               color="primary"
-              notifyMessage="Batch Added successfully! 😊✅"
+              notifyMessage="Class Added successfully! 😊✅"
             />
           </Box>
         </form>

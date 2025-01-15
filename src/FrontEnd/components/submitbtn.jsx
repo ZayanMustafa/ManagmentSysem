@@ -26,7 +26,7 @@ export const notify = (message, type = "success") => {
   }
 };
 
-const SubmitBtn = ({ label, color, notifyMessage, onClose }) => {
+const SubmitBtn = ({ label, color, notifyMessage, onClose , btnsize , disable }) => {
   const handleClick = () => {
     notify(notifyMessage);
     setTimeout(() => {
@@ -40,6 +40,8 @@ const SubmitBtn = ({ label, color, notifyMessage, onClose }) => {
       type="button"
       sx={{ backgroundColor: color, '&:hover': { backgroundColor: color } }}
       onClick={handleClick}
+      size={btnsize}
+      disable= {disable}
     >
       {label}
     </Button>

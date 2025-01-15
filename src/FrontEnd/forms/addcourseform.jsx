@@ -1,21 +1,12 @@
 import React, { useState } from "react";
-import {
-  Box,
-  Button,
-  Grid,
-  TextField,
-  Typography,
-  Avatar,
-  MenuItem,
-  Select,
-  FormControl,
-  InputLabel,
-  IconButton,
-} from "@mui/material";
+import { Box, Button, Grid, Typography, Avatar, IconButton } from "@mui/material";
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
 import Navbar from "../components/navbar"; // Custom Navbar Component
 import { toast } from 'react-toastify';
 import axios from 'axios';
+import Dropdown from '../components/Dropdown'; // Importing Dropdown component
+import FormInput from '../components/FormInput'; // Importing FormInput component
+import SubmitBtn from "../components/submitbtn";
 
 const AddCourse = () => {
   const [formData, setFormData] = useState({
@@ -141,81 +132,56 @@ const AddCourse = () => {
             </Grid>
 
             <Grid item xs={12} md={6}>
-              <TextField
-                fullWidth
+              <FormInput
                 label="Name of Course"
                 name="coursename"
                 value={formData.coursename}
                 onChange={handleInputChange}
-                required
               />
             </Grid>
 
             <Grid item xs={12} md={6}>
-              <FormControl fullWidth>
-                <InputLabel>Course Type</InputLabel>
-                <Select
-                  name="coursetype"
-                  value={formData.coursetype}
-                  onChange={handleInputChange}
-                  required
-                >
-                  <MenuItem value="IT">IT</MenuItem>
-                  <MenuItem value="Vocational">Vocational</MenuItem>
-                </Select>
-              </FormControl>
-            </Grid>
-           
-            <Grid item xs={12} md={6}>
-              <FormControl fullWidth>
-                <InputLabel>Course Duration</InputLabel>
-                <Select
-                  name="duration"
-                  value={formData.duration}
-                  onChange={handleInputChange}
-                  required
-                >
-                  <MenuItem value="2 Months">2 Months</MenuItem>
-                  <MenuItem value="3 Months">3 Months</MenuItem>
-                  <MenuItem value="4 Months">4 Months</MenuItem>
-                  <MenuItem value="1 Year">1 Year</MenuItem>
-                </Select>
-              </FormControl>
+              <Dropdown
+                label="Course Type"
+                name="coursetype"
+                value={formData.coursetype}
+                options={["IT", "Vocational"]}
+                onChange={handleInputChange}
+              />
             </Grid>
 
             <Grid item xs={12} md={6}>
-              <FormControl fullWidth>
-                <InputLabel>Course Level</InputLabel>
-                <Select
-                  name="level"
-                  value={formData.level}
-                  onChange={handleInputChange}
-                  required
-                >
-                  <MenuItem value="Beginner">Beginner</MenuItem>
-                  <MenuItem value="Intermediate">Intermediate</MenuItem>
-                  <MenuItem value="Advanced">Advanced</MenuItem>
-                </Select>
-              </FormControl>
+              <Dropdown
+                label="Course Duration"
+                name="duration"
+                value={formData.duration}
+                options={["2 Months", "3 Months", "4 Months", "1 Year"]}
+                onChange={handleInputChange}
+              />
+            </Grid>
+
+            <Grid item xs={12} md={6}>
+              <Dropdown
+                label="Course Level"
+                name="level"
+                value={formData.level}
+                options={["Beginner", "Intermediate", "Advanced"]}
+                onChange={handleInputChange}
+              />
             </Grid>
 
             <Grid item xs={12}>
-              <TextField
-                fullWidth
+              <FormInput
                 label="Basic Description"
                 name="dec"
                 value={formData.dec}
                 onChange={handleInputChange}
-                required
               />
             </Grid>
-
           </Grid>
 
           <Box sx={{ textAlign: "center", marginTop: 3 }}>
-            <Button type="submit" variant="contained" color="primary">
-              Submit
-            </Button>
+            <SubmitBtn label={"Sumbit"} size={"large"} color={"primary"}></SubmitBtn>
           </Box>
         </form>
       </Box>

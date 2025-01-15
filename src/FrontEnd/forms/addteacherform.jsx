@@ -23,7 +23,7 @@ const AddTeacher = () => {
 
   const [imagePreview, setImagePreview] = useState(null);
   const experienceyears = [ "1-3 years" , "4-6 years" , "7-10 years"]
-  const education = [ "Bachlor's" , "Masters" , "Phd"    ]
+  const education = [ "Bachlor's" , "Masters" , "Phd"]
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });

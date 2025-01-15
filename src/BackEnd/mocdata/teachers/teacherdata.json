@@ -1,26 +1,52 @@
 [
-    {
-      "id": 1,
-      "name": "Sheikh Ahmed Ali",
-      "subject": "Islamic Studies",
-      "experience": "15 years",
-      "department": "Religious Education",
-      "background": "Sheikh Ahmed Ali has been teaching Islamic Studies for over 15 years and is known for his deep knowledge of Islamic jurisprudence (Fiqh) and Quranic exegesis (Tafsir). He holds a degree from Al-Azhar University and has conducted many workshops on Islamic values."
-    },
-    {
-      "id": 2,
-      "name": "Umm Ibrahim",
-      "subject": "Arabic Language",
-      "experience": "10 years",
-      "department": "Languages",
-      "background": "Umm Ibrahim has been teaching Arabic for a decade. She has a passion for teaching classical Arabic and understanding the nuances of the language in relation to Islamic texts. She holds a Master's degree in Arabic from the University of Medina."
-    },
-    {
-      "id": 3,
-      "name": "Dr. Khalid Al-Siddiq",
-      "subject": "History of Islam",
-      "experience": "20 years",
-      "department": "History",
-      "background": "Dr. Khalid Al-Siddiq has been an expert in the history of Islam, with a focus on the early years of the Muslim community. He has authored several books on Islamic history and has a Ph.D. in Islamic History from the University of Cairo."
-    }
-  ]
+  {
+    "id": 1,
+    "name": "Dr. Ahmed Khan",
+    "number": "+92-321-1234567",
+    "subject": "Web Development",
+    "experience": "10 years",
+    "department": "Computer Science",
+    "background": "PhD in Computer Science, specialized in front-end technologies.",
+    "imageurl" : "https://img.freepik.com/premium-vector/cartoon-female-teacher-with-pointer-stick-vector-illustration_1023984-14075.jpg"    
+  },
+  {
+    "id": 2,
+    "name": "Prof. Aisha Malik",
+    "number": "+92-300-7654321",
+    "subject": "Data Science",
+    "experience": "8 years",
+    "department": "Data Analytics",
+    "background": "Masters in Data Science with a focus on machine learning.",
+    "imageurl" : "https://img.freepik.com/premium-vector/cartoon-female-teacher-with-pointer-stick-vector-illustration_1023984-14075.jpg"    
+  },
+  {
+    "id": 3,
+    "name": "Ustadh Bilal Raza",
+    "number": "+92-333-9876543",
+    "subject": "Cyber Security",
+    "experience": "7 years",
+    "department": "Information Security",
+    "background": "Certified Ethical Hacker (CEH) and CISSP.",
+    "imageurl" : "https://img.freepik.com/premium-vector/cartoon-female-teacher-with-pointer-stick-vector-illustration_1023984-14075.jpg"    
+  },
+  {
+    "id": 4,
+    "name": "Ms. Fatima Zahra",
+    "number": "+92-311-5678901",
+    "subject": "Mobile App Development",
+    "experience": "5 years",
+    "department": "Software Engineering",
+    "background": "Expert in React Native and Flutter development.",
+    "imageurl" : "https://img.freepik.com/premium-vector/cartoon-female-teacher-with-pointer-stick-vector-illustration_1023984-14075.jpg"    
+  },
+  {
+    "id": 5,
+    "name": "Engr. Muhammad Ali",
+    "number": "+92-321-3456789",
+    "subject": "Artificial Intelligence",
+    "experience": "6 years",
+    "department": "AI & Robotics",
+    "background": "Masters in AI, with research in deep learning.",
+    "imageurl" : "https://img.freepik.com/premium-vector/cartoon-female-teacher-with-pointer-stick-vector-illustration_1023984-14075.jpg"    
+  }
+]

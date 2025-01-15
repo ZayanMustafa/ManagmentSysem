@@ -17,7 +17,7 @@ import Navbar from "../components/navbar";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
-import { notify } from '../components/submitbtn';
+import SubmitBtn, { notify } from '../components/submitbtn';
 
 
 const AddQuiz = () => {
@@ -140,14 +140,12 @@ const AddQuiz = () => {
             </Grid>
           </Grid>
           <Box sx={{ textAlign: "center", marginTop: 3 }}>
-            <Button onClick={handleAddQuestion} variant="contained" color="secondary">
+          <Button onClick={handleAddQuestion} variant="contained" color={ !isFormValid() ? "Gray" : "primary"} disabled={!isFormValid()}>
               Add Another Question
             </Button>
           </Box>
           <Box sx={{ textAlign: "center", marginTop: 3 }}>
-            <Button type="submit" variant="contained" color="primary" size="large"  disabled={!isFormValid()} >
-              Submit Quiz
-            </Button>
+            < SubmitBtn label={" Sumbit Quiz"} color={ !isFormValid() ? "Gray" : "Primary"} btnsize="large" disabled={!isFormValid()} ></SubmitBtn>
           </Box>
         </form>
         <Box sx={{ marginTop: 4 }}>
